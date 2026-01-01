@@ -1,6 +1,6 @@
 import java.io.OutputStream;
 
-public class StandartPolicy implements IReegistrationPolicy{
+public class StandartPolicy implements IRegistrationPolicy{
     
     // standart olarak tüm kullaniciların dolu olmaytan derslere kayit alabiceği politilasını uygular
     @Override

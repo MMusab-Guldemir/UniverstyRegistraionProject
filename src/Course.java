@@ -1,19 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.plaf.basic.BasicScrollPaneUI.ViewportChangeHandler;
-
-import java.security.PublicKey;
-import java.util.ArrayList;
-
 public class Course {
-    String courseName; 
-    int courseCode;
-    List<Student> enrolledStudents; // kayitli oğrenciler listesi.
-    int capacity;
-    Instructor instructor; // dersi veren ogretmen.
+    String courseName; //dersin adi
+    int courseCode; //dersin kodu
+    List<Student> enrolledStudents; //kayitli ogrenciler listesi
+    int capacity; //dersin kapasitesi
+    Instructor instructor; //dersi veren ogretmen
 
-    // constructor
-    public Course(String courseName, int courseCode, int capacity, Instructor instructor){
+    //constructor
+    public Course(String courseName, int courseCode, int capacity, Instructor instructor) {
         this.courseName = courseName;
         this.courseCode = courseCode;
         this.capacity = capacity;
@@ -21,12 +17,12 @@ public class Course {
         enrolledStudents = new ArrayList<>();
     }
 
-    // enroll = oğrenciyi derse kaydetmek.
-    public Void enroll(Student student){
-        enrolledStudents.add(student);
+    //enroll = ogrenciyi derse kaydetmek
+    public void enroll(Student student){
+        enrolledStudents.add(student); 
     }
 
-    // dersin bilgilerini ekrana yazdiran metod.
+    //dersin bilgilerini ekrana yazdiran metod
     public void displayCourseInfo(){
         System.out.println("Course Name: " + courseName);
         System.out.println("Course Code: " + courseCode);
@@ -42,7 +38,7 @@ public class Course {
         }
     }
 
-    // ders dolu mu diye kontrol eden metod.
+    //ders dolu mu diye kontrol eden metod
     public boolean isFull(){
         return enrolledStudents.size() >= capacity;
     }
